@@ -53,11 +53,18 @@ int _printf(const char *format, ...)
 	return (count);
 }
 
+/**
+ * main - main function.
+ *
+ * Return: 0
+ */
+
 int main(void)
 {
 	int n;
 
-	n = _printf("Hello, %s! %c is awesome.%%%s\n", "world", 'C', "Have a nice day");
+	n = _printf("Hello, %s! %c is awesome.%%%s\n", "world",
+'C', "Have a nice day");
 	printf("Number of characters printed: %d\n", n);
 
 	return (0);
