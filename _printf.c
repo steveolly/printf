@@ -9,10 +9,15 @@
  *
  * Return: The number of characters printed.
  */
+
+int _printf(const char *format, ...);
 int _printf(const char *format, ...)
 {
 	va_list args;
 	int count = 0;
+
+	if (format == NULL)
+		return (-1);
 
 	va_start(args, format);
 
@@ -33,8 +38,17 @@ int _printf(const char *format, ...)
 		count++;
 		break;
 	case 's':
-		count += printf("%s", va_arg(args, char *));
+	{
+		char *str = va_arg(args, char*);
+		int j = 0;
+
+		for (j = 0; str[j]; j++)
+		{
+			putchar(str[j]);
+			count++;
+		}
 		break;
+	}
 	case '%':
 		putchar('%');
 		count++;
@@ -61,11 +75,9 @@ int _printf(const char *format, ...)
 
 int main(void)
 {
-	int n;
-
-	n = _printf("Hello, %s! %c is awesome.%%%s\n", "world",
-'C', "Have a nice day");
-	printf("Number of characters printed: %d\n", n);
+	_printf("Hello, %s!\n", "Have a nice day");
+	_printf("%c is awesome.\n", 'C');
+	_printf("%%%s\n", "Have a nice day");
 
 	return (0);
 }
