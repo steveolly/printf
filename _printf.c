@@ -15,7 +15,7 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 /**
- * printf_char - print a character.
+ * print_char - print a character.
  * @args: the va_list containing the argument.
  * @count: The count of characters printed.
  *
