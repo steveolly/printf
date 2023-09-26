@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
-
+#include <limits.h>
 /**
  * integ_printf - Simulated printf function with limited functionality.
  * @format: The format string containing conversion specifiers.
